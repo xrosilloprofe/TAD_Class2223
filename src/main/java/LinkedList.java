@@ -90,4 +90,75 @@ public class LinkedList {
         return result;
     }
 
+    public Integer get(int index){
+        Integer result = null;
+        if (isEmpty() || index <0 || index>=size)
+            return result;
+        Node node = head;
+        while(index>0){
+            node = node.getNext();
+            index--;
+        }
+//        for (int i = 0; i <= index; i++) {
+//            node = node.getNext();
+//        }
+        result = node.getElem();
+        return result;
+    }
+
+    public void clear(){
+        head = null;
+        tail = null;
+        size = 0;
+    }
+
+    public boolean addAll(LinkedList list){
+        boolean updated = false;
+        Node node = list.getHead();
+
+        for (int i = 0; i < list.size(); i++) {
+            addTail(node.getElem());
+            node = node.getNext();
+            updated = true;
+        }
+        return updated;
+    }
+
+    @Override
+    public boolean equals(Object obj){
+    if(!(obj instanceof LinkedList))
+        return false;
+    LinkedList list = (LinkedList) obj;
+
+    if(list.size() != this.size)
+        return false;
+
+    Node aux1 = this.head;
+    Node aux2 = list.getHead();
+
+    while(aux1 != null){
+        if(!aux1.equals(aux2))
+            return false;
+        aux1 = aux1.getNext();
+        aux2 = aux2.getNext();
+    }
+        return true;
+    }
+
+    @Override
+    public String toString(){
+        return "{ size: " + size + ", Element: " + ((head==null) ? "}" : head.toString());
+    }
+
+    public boolean contains(int elem){
+        Node node = head;
+        for (int i = 0; i < size; i++) {
+            if(elem == node.getElem())
+                return true;
+            node = node.getNext();
+        }
+        return false;
+    }
+
+
 }

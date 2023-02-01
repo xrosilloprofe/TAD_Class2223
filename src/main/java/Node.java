@@ -34,7 +34,7 @@ public class Node {
 
     @Override
     public String toString(){
-        return elem + ((next!=null)?", ":" }");
+        return elem + ((next!=null)?", " + next : " }");
     }
 
     @Override
