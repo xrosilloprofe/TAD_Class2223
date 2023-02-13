@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="daaa8934-1ae9-4878-9a2b-103aa4b0a4fe" name="Changes" comment="collection">
-      <change afterPath="$PROJECT_DIR$/src/main/java/colecciones/Mapa.java" afterDir="false" />
+    <list default="true" id="daaa8934-1ae9-4878-9a2b-103aa4b0a4fe" name="Changes" comment="map">
+      <change afterPath="$PROJECT_DIR$/src/main/java/generics/Coche.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/generics/Moto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/generics/TestVehi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/generics/Vehiculo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +62,7 @@
       <module name="TAD_Class2223" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="colecciones.*" />
+          <option name="PATTERN" value="generics.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -110,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675969459252</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="map">
+      <created>1675972672492</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1675972672492</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -118,6 +128,7 @@
     <MESSAGE value="v1.0" />
     <MESSAGE value="generic" />
     <MESSAGE value="collection" />
-    <option name="LAST_COMMIT_MESSAGE" value="collection" />
+    <MESSAGE value="map" />
+    <option name="LAST_COMMIT_MESSAGE" value="map" />
   </component>
 </project>
