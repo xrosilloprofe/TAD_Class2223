@@ -38,6 +38,12 @@ public class Main {
         Set<Trabajador> trabajadoresOrdenados = new TreeSet<>(plantilla.keySet());
         System.out.println(trabajadoresOrdenados);
 
+        List<Trabajador> trabajadorList = new ArrayList<>(plantilla.keySet());
+//        trabajadorList.sort(Trabajador::compareTo);
+        trabajadorList.sort(Trabajador.SORT_BY_NAME);
+        System.out.println(trabajadorList);
+
+        //Listado de las nacionalidades por orden alfabético y sus trabajadores por edad.
 
     }
 }

@@ -1,9 +1,18 @@
 package ejercicio1;
 
 import java.time.LocalDate;
+import java.util.Comparator;
 import java.util.Objects;
 
 public class Trabajador implements Comparable<Trabajador>{
+
+    public static final Comparator<Trabajador> SORT_BY_NAME = new Comparator<Trabajador>() {
+        @Override
+        public int compare(Trabajador o1, Trabajador o2) {
+            return o1.getDNI().compareTo(o2.getDNI());
+        }
+    };
+
     private String DNI;
     private String nombre;
     private String apellido;
@@ -59,4 +68,7 @@ public class Trabajador implements Comparable<Trabajador>{
     public int compareTo(Trabajador trabajador) {
         return this.DNI.compareTo(trabajador.getDNI());
     }
+
+
+
 }
