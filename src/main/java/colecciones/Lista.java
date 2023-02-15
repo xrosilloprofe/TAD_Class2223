@@ -10,14 +10,17 @@ public class Lista {
         miLista.add("helena");
         miLista.add("jose luis");
         miLista.add("alejandro");
-        miLista.add("ernesto");
+        miLista.add("mario");
 //        imprimirLista(miLista);
 
         List<String> miLista2 = new ArrayList<>(miLista);
-        imprimirLista2(miLista2);
+//        imprimirLista2(miLista2);
 
         List<String> miLista3 = new LinkedList<>(miLista);
         miLista3.addAll(miLista2);
+
+        imprimirLista2(miLista);
+        imprimirLista2(miLista2);
         imprimirLista2(miLista3);
 
 
