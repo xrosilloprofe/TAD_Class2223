@@ -13,6 +13,13 @@ public class Trabajador implements Comparable<Trabajador>{
         }
     };
 
+    public static final Comparator<Trabajador> SORT_BY_AGE = new Comparator<Trabajador>() {
+        @Override
+        public int compare(Trabajador o1, Trabajador o2) {
+            return o1.getFechaNacimiento().compareTo(o2.getFechaNacimiento());
+        }
+    };
+
     private String DNI;
     private String nombre;
     private String apellido;

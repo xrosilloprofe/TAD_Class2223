@@ -1,6 +1,6 @@
 package ejercicio1;
 
-public class Pais {
+public class Pais implements Comparable<Pais>{
 
     private String nombre;
     private long poblacion;
@@ -35,4 +35,8 @@ public class Pais {
     }
 
 
+    @Override
+    public int compareTo(Pais o) {
+        return nombre.compareTo(o.getNombre());
+    }
 }
