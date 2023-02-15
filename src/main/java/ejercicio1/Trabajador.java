@@ -3,7 +3,7 @@ package ejercicio1;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Trabajador {
+public class Trabajador implements Comparable<Trabajador>{
     private String DNI;
     private String nombre;
     private String apellido;
@@ -53,5 +53,10 @@ public class Trabajador {
     @Override
     public int hashCode() {
         return Objects.hash(DNI);
+    }
+
+    @Override
+    public int compareTo(Trabajador trabajador) {
+        return this.DNI.compareTo(trabajador.getDNI());
     }
 }

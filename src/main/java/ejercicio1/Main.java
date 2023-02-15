@@ -1,8 +1,7 @@
 package ejercicio1;
 
 import java.time.LocalDate;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,12 +17,26 @@ public class Main {
         Pais p3 = new Pais("Francia", 72000000);
 
         plantilla.put(t1,p1);
-        plantilla.put(t1,p1);
-        plantilla.put(t1,p2);
-        plantilla.put(t1,p3);
-        plantilla.put(t1,p3);
+        plantilla.put(t2,p1);
+        plantilla.put(t3,p2);
+        plantilla.put(t4,p3);
+        plantilla.put(t5,p3);
 
         //Obtener un listado de solo las nacionalidades de la empresa.
+        // solucion 1
+        Collection<Pais> pais = plantilla.values();
+        System.out.println(pais);
+
+        Set<Trabajador> trabajadorSet = plantilla.keySet();
+        for(Trabajador t : trabajadorSet)
+            System.out.println(plantilla.get(t));
+
+// Listado de solo los trabajadores ordenados por su orden natural
+// Esto lo deberemos hacer al menos de dos maneras diferentes.
+// Por ejemplo, mediante un TreeSet y un ArrayList
+
+        Set<Trabajador> trabajadoresOrdenados = new TreeSet<>(plantilla.keySet());
+        System.out.println(trabajadoresOrdenados);
 
 
     }
