@@ -1,3 +1,5 @@
+package tad;
+
 public class Node {
     private int elem;
     private Node next;
