@@ -1,0 +1,111 @@
+Index: src/main/java/colecciones/Persona.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package colecciones;\n\npublic class Persona implements Comparable<Persona> {\n\n    private String nombre;\n    private String apellido;\n    private String dni;\n\n\n    public Persona(String nombre, String apellido, String dni) {\n        this.nombre = nombre;\n        this.apellido = apellido;\n        this.dni = dni;\n    }\n\n    public String getNombre() {\n        return nombre;\n    }\n\n    public void setNombre(String nombre) {\n        this.nombre = nombre;\n    }\n\n\n    public String getApellido() {\n        return apellido;\n    }\n\n    public void setApellido(String apellido) {\n        this.apellido = apellido;\n    }\n\n    public String getDni() {\n        return dni;\n    }\n\n    public void setDni(String dni) {\n        this.dni = dni;\n    }\n\n    @Override\n    public String toString() {\n        return \"Persona{\" +\n                \"nombre='\" + nombre + '\\'' +\n                \", apellido='\" + apellido + '\\'' +\n                \", DNI='\" + dni + '\\'' +\n                '}';\n    }\n\n    @Override\n    public boolean equals(Object obj) {\n        if (!(obj instanceof Persona))\n            return false;\n        Persona persona = (Persona) obj;\n        return (persona.nombre.equals(this.nombre)\n                && persona.apellido.equals(this.apellido)\n                && persona.dni.equals(this.dni));\n    }\n\n\n    @Override\n    public int compareTo(Persona p) {\n        if (this.nombre.compareTo(p.nombre) != 0)\n            return (nombre.compareTo(p.nombre));\n        if (apellido.compareTo(p.apellido) != 0)\n            return (apellido.compareTo(p.apellido));\n        return (dni.compareTo(p.dni));\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/colecciones/Persona.java b/src/main/java/colecciones/Persona.java
+--- a/src/main/java/colecciones/Persona.java	(revision ae7e1aa22e11bed339158a21433fe95ffb61718d)
++++ b/src/main/java/colecciones/Persona.java	(date 1677003985635)
+@@ -1,5 +1,7 @@
+ package colecciones;
+ 
++import static java.util.Objects.hash;
++
+ public class Persona implements Comparable<Persona> {
+ 
+     private String nombre;
+@@ -66,4 +68,9 @@
+             return (apellido.compareTo(p.apellido));
+         return (dni.compareTo(p.dni));
+     }
++
++    @Override
++    public int hashCode() {
++        return nombre.hashCode()+apellido.hashCode();
++    }
+ }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"daaa8934-1ae9-4878-9a2b-103aa4b0a4fe\" name=\"Changes\" comment=\"map\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/ejercicio1/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/ejercicio1/Main.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/ejercicio1/Pais.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/ejercicio1/Pais.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/ejercicio1/Trabajador.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/ejercicio1/Trabajador.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"MavenImportPreferences\">\n    <option name=\"importingSettings\">\n      <MavenImportingSettings>\n        <option name=\"workspaceImportEnabled\" value=\"true\" />\n      </MavenImportingSettings>\n    </option>\n  </component>\n  <component name=\"ProjectId\" id=\"2L3Z3C4DA6vz6aeJ6LlBY5rafUJ\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;last_opened_file_path&quot;: &quot;/home/xrosillo/IdeaProjects/TAD_Class2223/src/main/java/generics&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/src/main/java/generics\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"Lista\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"colecciones.Lista\" />\n      <module name=\"TAD_Class2223\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"generics.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Application.Lista\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"daaa8934-1ae9-4878-9a2b-103aa4b0a4fe\" name=\"Changes\" comment=\"\" />\n      <created>1675101530143</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1675101530143</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"initial\">\n      <created>1675106885077</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1675106885077</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"v1.0\">\n      <created>1675277584789</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1675277584790</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"generic\">\n      <created>1675794993853</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1675794993853</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"collection\">\n      <created>1675969459252</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1675969459252</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"map\">\n      <created>1675972672492</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1675972672492</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"map\">\n      <created>1676316057439</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1676316057439</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"map\">\n      <created>1676486274313</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1676486274313</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"map\">\n      <created>1676487659515</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1676487659515</updated>\n    </task>\n    <task id=\"LOCAL-00009\" summary=\"map\">\n      <created>1676488898793</created>\n      <option name=\"number\" value=\"00009\" />\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1676488898793</updated>\n    </task>\n    <task id=\"LOCAL-00010\" summary=\"map\">\n      <created>1676489807693</created>\n      <option name=\"number\" value=\"00010\" />\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1676489807693</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"11\" />\n    <servers />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"initial\" />\n    <MESSAGE value=\"v1.0\" />\n    <MESSAGE value=\"generic\" />\n    <MESSAGE value=\"collection\" />\n    <MESSAGE value=\"map\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"map\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision ae7e1aa22e11bed339158a21433fe95ffb61718d)
++++ b/.idea/workspace.xml	(date 1677010363613)
+@@ -6,9 +6,8 @@
+   <component name="ChangeListManager">
+     <list default="true" id="daaa8934-1ae9-4878-9a2b-103aa4b0a4fe" name="Changes" comment="map">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/ejercicio1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ejercicio1/Main.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/ejercicio1/Pais.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ejercicio1/Pais.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/ejercicio1/Trabajador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ejercicio1/Trabajador.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/colecciones/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/colecciones/Persona.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/colecciones/Prueba.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/colecciones/Prueba.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -154,7 +153,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1676489807693</updated>
+     </task>
+-    <option name="localTasksCounter" value="11" />
++    <task id="LOCAL-00011" summary="map">
++      <created>1676492247688</created>
++      <option name="number" value="00011" />
++      <option name="presentableId" value="LOCAL-00011" />
++      <option name="project" value="LOCAL" />
++      <updated>1676492247688</updated>
++    </task>
++    <option name="localTasksCounter" value="12" />
+     <servers />
+   </component>
+   <component name="VcsManagerConfiguration">
+@@ -165,4 +171,15 @@
+     <MESSAGE value="map" />
+     <option name="LAST_COMMIT_MESSAGE" value="map" />
+   </component>
++  <component name="XDebuggerManager">
++    <breakpoint-manager>
++      <breakpoints>
++        <line-breakpoint enabled="true" type="java-line">
++          <url>file://$PROJECT_DIR$/src/main/java/colecciones/Prueba.java</url>
++          <line>13</line>
++          <option name="timeStamp" value="1" />
++        </line-breakpoint>
++      </breakpoints>
++    </breakpoint-manager>
++  </component>
+ </project>
+\ No newline at end of file
+Index: src/main/java/colecciones/Prueba.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package colecciones;\n\nimport java.util.*;\n\npublic class Prueba {\n    public static void main(String[] args) {\n        List<String> coches = new ArrayList<>();\n        coches.addAll(List.of(\"z3\",\"golf\",\"toledo\",\"renault 11\",\"seat 124\",\"renault 5\"));\n\n        for(String coche:coches){\n            if(coche.contains(\"s\"))\n                coches.remove(coche);\n        }\n\n//        Iterator<String> iterador = coches.iterator();\n//        while(iterador.hasNext()){\n//            String coche = iterador.next();\n//            System.out.println(\"Coche --> \" + coche);\n//        }\n\n\n        Set<String> cochesConjunto2 = new HashSet<>(coches);\n        Set<String> cochesConjunto = new TreeSet<>(coches);\n//        System.out.println(cochesConjunto);\n\n        Map<String, String> cochePropietario = new HashMap<>();\n        cochePropietario.put(\"tesla model 3\",\"ian\");\n        cochePropietario.put(\"vw i3\",\"carlos\");\n        cochePropietario.put(\"vw i4\", \"alejandro\");\n        cochePropietario.put(\"bmw ix3\", \"alejandro\");\n\n        Collection<String> cars = cochePropietario.values();\n        System.out.println(cars);\n\n        Set<String> claves = cochePropietario.keySet();\n        Iterator<String> iterator = claves.iterator();\n        //iterar\n        for(String clave : claves){\n            System.out.println(cochePropietario.get(clave));\n        }\n\n        Set<Map.Entry<String,String>> conjuntoDatos = cochePropietario.entrySet();\n        for(Map.Entry<String,String> clau : conjuntoDatos)\n            System.out.println(clau.getKey() + \" - \" + clau.getValue());\n\n\n\n//        System.out.println(cochePropietario);\n\n\n\n\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/colecciones/Prueba.java b/src/main/java/colecciones/Prueba.java
+--- a/src/main/java/colecciones/Prueba.java	(revision ae7e1aa22e11bed339158a21433fe95ffb61718d)
++++ b/src/main/java/colecciones/Prueba.java	(date 1677003870811)
+@@ -4,12 +4,15 @@
+ 
+ public class Prueba {
+     public static void main(String[] args) {
++
+         List<String> coches = new ArrayList<>();
+         coches.addAll(List.of("z3","golf","toledo","renault 11","seat 124","renault 5"));
+ 
++
++
++
+         for(String coche:coches){
+-            if(coche.contains("s"))
+-                coches.remove(coche);
++                System.out.println(coche.hashCode());
+         }
+ 
+ //        Iterator<String> iterador = coches.iterator();

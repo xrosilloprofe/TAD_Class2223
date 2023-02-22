@@ -1,5 +1,7 @@
 package colecciones;
 
+import static java.util.Objects.hash;
+
 public class Persona implements Comparable<Persona> {
 
     private String nombre;
@@ -65,5 +67,10 @@ public class Persona implements Comparable<Persona> {
         if (apellido.compareTo(p.apellido) != 0)
             return (apellido.compareTo(p.apellido));
         return (dni.compareTo(p.dni));
+    }
+
+    @Override
+    public int hashCode() {
+        return nombre.hashCode()+apellido.hashCode();
     }
 }

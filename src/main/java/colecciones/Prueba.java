@@ -4,12 +4,15 @@ import java.util.*;
 
 public class Prueba {
     public static void main(String[] args) {
+
         List<String> coches = new ArrayList<>();
         coches.addAll(List.of("z3","golf","toledo","renault 11","seat 124","renault 5"));
 
+
+
+
         for(String coche:coches){
-            if(coche.contains("s"))
-                coches.remove(coche);
+                System.out.println(coche.hashCode());
         }
 
 //        Iterator<String> iterador = coches.iterator();
